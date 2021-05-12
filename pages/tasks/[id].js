@@ -64,7 +64,7 @@ export async function getStaticProps({ params }) {
   const staticTask = await getTaskData(params.id);
   return {
     props: {
-      id: staticTask.id,
+      id: staticTask.id || null,
       staticTask,
     },
     revalidate: 3,
